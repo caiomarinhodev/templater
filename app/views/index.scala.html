@@ -1,7 +1,233 @@
-@(message: String)
+@(title: String, temas: List[Template], usuario: Usuario)
+<!DOCTYPE HTML>
+<!--
+-->
+<html>
+    <head>
+        <title>Templatir by Codificando Tudo</title>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+            <!--[if lte IE 8]>
+        <script src="/assets/html5up-verti/css/ie/html5shiv.js"></script><![endif]-->
+        <script src="/assets/html5up-verti/js/jquery.min.js"></script>
+            <!-- jQuery 2.1.3 -->
+        <script src="/assets/plugins/jQuery/jQuery-2.1.3.min.js"></script>
 
-@main("Welcome to Play") {
+        <script src="/assets/html5up-verti/js/jquery.dropotron.min.js"></script>
+        <script src="/assets/html5up-verti/js/skel.min.js"></script>
+        <script src="/assets/html5up-verti/js/skel-layers.min.js"></script>
+        <script src="/assets/html5up-verti/js/init.js"></script>
 
-    @play20.welcome(message, style = "Java")
+            <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
-}
+            <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+            <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+        <link rel="stylesheet" href="/assets/styl.css" />
+
+        <noscript>
+
+            <link rel="stylesheet" href="/assets/html5up-verti/css/skel.css" />
+            <link rel="stylesheet" href="/assets/html5up-verti/css/style.css" />
+            <link rel="stylesheet" href="/assets/html5up-verti/css/style-desktop.css" />
+
+
+        </noscript>
+            <!--[if lte IE 8]>
+        <link rel="stylesheet" href="html5up-verti/css/ie/v8.css"/><![endif]-->
+    </head>
+    <body class="homepage">
+
+            <!-- Header -->
+        <div id="header-wrapper">
+            <header id="header" class="container">
+
+                    <!-- Logo -->
+                <div id="logo">
+                    <h1><a href="#">Templatir</a></h1>
+                    <span>by CODIFICANDO TUDO</span>
+                </div>
+
+                    <!-- Nav -->
+                <nav id="nav">
+                    <ul>
+                        @if(usuario != null) {
+                            <li class="current"><a href="/">Olá, @usuario.getNome</a></li>
+                        }else{
+                            <li class="current"><a href="/">Olá, Visitante</a></li>
+                        }
+                        <li>
+                            <a href="">Categorias</a>
+                            <ul>
+                                <li><a href="/">Wordpress</a></li>
+                                <li><a href="/">Blogger</a></li>
+                                <li><a href="/">HTML5</a></li>
+                                <li><a href="/">Responsive</a></li>
+                                <li><a href="/">Bootstrap</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="/">Login</a></li>
+                    </ul>
+                </nav>
+
+            </header>
+        </div>
+
+            <!-- Banner -->
+        <div id="banner-wrapper">
+            <div id="banner" class="box container">
+                <div class="row">
+
+                </div>
+            </div>
+        </div>
+        @if(Sistema.getIndice > 0) {
+            @for(i <- 0 to Sistema.getIndice) {
+                    <!-- Features pegar a partir daqui toda a Feature row (filter para 3 itens por linha)-->
+                <div class="oculto" id="line-@i">
+                    <div id="features-wrapper" >
+                        <div class="container">
+                            <div class="row" >
+                                <div class="4u">
+                                        <!-- Box -->
+                                    <section class="box feature">
+                                        <a href="#" class="image featured"><img src="assets/html5up-verti/images/pic01.jpg" alt="" /></a>
+                                        <div class="inner">
+                                            <header>
+                                                <h2>Put something here</h2>
+                                            </header>
+                                        </div>
+                                    </section>
+                                </div>
+                                <div class="4u">
+                                        <!-- Box -->
+                                    <section class="box feature">
+                                        <a href="#" class="image featured"><img src="assets/html5up-verti/images/pic02.jpg" alt="" /></a>
+                                        <div class="inner">
+                                            <header>
+                                                <h2>An interesting title</h2>
+                                            </header>
+                                        </div>
+                                    </section>
+                                </div>
+                                <div class="4u">
+                                        <!-- Box -->
+                                    <section class="box feature last">
+                                        <a href="#" class="image featured"><img src="assets/html5up-verti/images/pic03.jpg" alt="" /></a>
+                                        <div class="inner">
+                                            <header>
+                                                <h2>Oh, and finally ...</h2>
+                                            </header>
+                                        </div>
+                                    </section>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+            <!-- Main -->
+        <div id="buttonmore">
+            <br/>
+            <center>
+                <button id="botao" onclick="btn();" class="button icon fa-plus">MORE</button>
+            </center>
+        </div>
+
+            <!-- Footer -->
+        <div id="footer-wrapper">
+            <footer id="footer" class="container">
+                <div class="row">
+                    <div class="3u">
+
+                            <!-- Links
+								<section class="widget links">
+									<h3>Random Stuff</h3>
+									<ul class="style2">
+										<li><a href="#">Etiam feugiat condimentum</a></li>
+										<li><a href="#">Aliquam imperdiet suscipit odio</a></li>
+										<li><a href="#">Sed porttitor cras in erat nec</a></li>
+										<li><a href="#">Felis varius pellentesque potenti</a></li>
+										<li><a href="#">Nullam scelerisque blandit leo</a></li>
+									</ul>
+								</section>-->
+
+                    </div>
+                    <div class="3u">
+
+                            <!-- Links
+								<section class="widget links">
+									<h3>Random Stuff</h3>
+									<ul class="style2">
+										<li><a href="#">Etiam feugiat condimentum</a></li>
+										<li><a href="#">Aliquam imperdiet suscipit odio</a></li>
+										<li><a href="#">Sed porttitor cras in erat nec</a></li>
+										<li><a href="#">Felis varius pellentesque potenti</a></li>
+										<li><a href="#">Nullam scelerisque blandit leo</a></li>
+									</ul>
+								</section>-->
+
+                    </div>
+                    <div class="3u">
+
+                            <!-- Links
+								<section class="widget links">
+									<h3>Random Stuff</h3>
+									<ul class="style2">
+										<li><a href="#">Etiam feugiat condimentum</a></li>
+										<li><a href="#">Aliquam imperdiet suscipit odio</a></li>
+										<li><a href="#">Sed porttitor cras in erat nec</a></li>
+										<li><a href="#">Felis varius pellentesque potenti</a></li>
+										<li><a href="#">Nullam scelerisque blandit leo</a></li>
+									</ul>
+								</section>-->
+
+                    </div>
+                    <div class="3u">
+
+                            <!-- Contact -->
+                        <section class="widget contact last">
+                            <h3>Contact Us</h3>
+                            <ul>
+                                <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+                                <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+                                <li><a href="#" class="icon fa-google-plus"><span class="label">Google +</span></a></li>
+                            </ul>
+                            <p>1234 Fictional Road<br />
+                                Nashville, TN 00000<br />
+                                (800) 555-0000</p>
+                        </section>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="12u">
+                        <div id="copyright">
+                            <ul class="menu">
+                                <li>&copy; All rights reserved</li><li>
+                                Design: <a href="http://codificandotudo.blogspot.com" target="_blank">
+                                Codificando Tudo</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+        <script>
+        var k = 0 ;
+        function btn ( ) {
+            k = k + 1 ;
+            $ ( '#line-' + k ).slideToggle( "slow");
+            window.scrollBy(0,275);
+
+        }
+        </script>
+    </body>
+</html>
