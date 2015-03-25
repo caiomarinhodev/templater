@@ -16,7 +16,9 @@ public class Sistema {
 
     @Transactional
     public static int getIndice(){
-        return ((getListaTodosTemplates().size()/3)-1);
+        int size = getListaTodosTemplates().size();
+        int resto = size%3;
+        return ((size-resto)/3);
     }
 
     @Transactional
