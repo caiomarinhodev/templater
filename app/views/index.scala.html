@@ -71,7 +71,7 @@
                                 <li><a href="/">Bootstrap</a></li>
                             </ul>
                         </li>
-                        <li><a href="/">Login</a></li>
+                        <li><a href="/login">Login</a></li>
                     </ul>
                 </nav>
 
@@ -93,13 +93,15 @@
                     <div id="features-wrapper" >
                         <div class="container">
                             <div class="row" >
+
                                 <div class="4u">
                                         <!-- Box -->
                                     <section class="box feature">
-                                        <a href="#" class="image featured"><img src="assets/html5up-verti/images/pic01.jpg" alt="" /></a>
+                                        <a href="/template/@temas.get(i*3).getIdTemplate" class="image featured">
+                                            <img src="@temas.get(i*3).getUrl_picture" alt="" /></a>
                                         <div class="inner">
                                             <header>
-                                                <h2>Put something here</h2>
+                                                <center><h2>@temas.get(i*3).getTitulo</h2></center>
                                             </header>
                                         </div>
                                     </section>
@@ -107,10 +109,11 @@
                                 <div class="4u">
                                         <!-- Box -->
                                     <section class="box feature">
-                                        <a href="#" class="image featured"><img src="assets/html5up-verti/images/pic02.jpg" alt="" /></a>
+                                        <a href="/template/@temas.get((i*3)+1).getIdTemplate" class="image featured">
+                                            <img src="@temas.get((i*3)+1).getUrl_picture" alt="" /></a>
                                         <div class="inner">
                                             <header>
-                                                <h2>An interesting title</h2>
+                                                <center><h2>@temas.get((i*3)+1).getTitulo</h2></center>
                                             </header>
                                         </div>
                                     </section>
@@ -118,10 +121,11 @@
                                 <div class="4u">
                                         <!-- Box -->
                                     <section class="box feature last">
-                                        <a href="#" class="image featured"><img src="assets/html5up-verti/images/pic03.jpg" alt="" /></a>
+                                        <a href="/template/@temas.get((i*3)+2).getIdTemplate" class="image featured">
+                                            <img src="@temas.get((i*3)+2).getUrl_picture" alt="" /></a>
                                         <div class="inner">
                                             <header>
-                                                <h2>Oh, and finally ...</h2>
+                                                <center><h2>@temas.get((i*3)+2).getTitulo</h2></center>
                                             </header>
                                         </div>
                                     </section>
@@ -136,7 +140,7 @@
         <div id="buttonmore">
             <br/>
             <center>
-                <button id="botao" onclick="btn();" class="button icon fa-plus">MORE</button>
+                <button id="botao" onclick="btn();" class="button icon fa-plus">Ver Mais</button>
             </center>
         </div>
 
@@ -228,6 +232,7 @@
             window.scrollBy(0,275);
 
         }
+            btn();
         </script>
     </body>
 </html>

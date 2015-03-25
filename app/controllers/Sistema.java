@@ -20,6 +20,22 @@ public class Sistema {
     }
 
     @Transactional
+    public static int getIndicesTable(){
+        List<Template> l = getListaTodosTemplates();
+        int total = l.size();
+        int resto = total%30;
+        float conta = ((float)l.size())/(float)30;
+        if(conta>1 && resto==0){
+            return (getListaTodosTemplates().size()/30);
+        }else if(conta>1 && resto!=0){
+            return (getListaTodosTemplates().size()/30)+1;
+        }else{
+            return 1;
+        }
+
+    }
+
+    @Transactional
     public static boolean addUsuario(String nome, String email, String senha, String url_picture){
         Usuario u = new Usuario(nome, email,senha,url_picture);
         if(!existeUsuario(u)){
@@ -44,6 +60,25 @@ public class Sistema {
         }
         return null;
 
+    }
+
+    @Transactional
+    public static float porcentagemTemplates(){
+        List<Template> lt = getListaTodosTemplates();
+        List<Usuario> lu = getListaTodosUsuarios();
+        float t = (float)lt.size();
+        float u = (float)lu.size();
+        return (100-(((t+u)*100)/10000));
+    }
+
+    @Transactional
+    public static int totalDownloads(){
+        List<Template> li = getListaTodosTemplates();
+        int k = 0;
+        for(Template t: li){
+            k = k+t.getDownloads();
+        }
+        return k;
     }
 
     @Transactional

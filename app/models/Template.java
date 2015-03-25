@@ -28,6 +28,9 @@ public class Template {
     private String text;
     @Column
     private int type;
+    @Column
+    private int downloads;
+
 
     public Template(){
 
@@ -42,6 +45,15 @@ public class Template {
         this.categorie = categorie;
         this.text = text;
         this.type = type;
+        this.downloads=0;
+    }
+
+    public int getDownloads() {
+        return downloads;
+    }
+
+    public void setDownloads(int downloads) {
+        this.downloads = downloads;
     }
 
     public Long getIdTemplate() {

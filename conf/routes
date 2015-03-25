@@ -3,9 +3,25 @@
 # ~~~~
 
 # Home page
-GET     /                           controllers.Application.index
+GET         /                             controllers.Application.index
+GET         /template/:id                 controllers.Application.viewTemplate(id: String)
+GET         /login                        controllers.Application.renderLogin
+GET         /loginfb                      controllers.Application.logarComFacebook
+GET         /loginfbresponse              controllers.Application.logarComFace(code: String)
+GET         /register                     controllers.Application.renderRegister
+GET         /admin                        controllers.Application.renderDashboard
+GET         /admin/adicionar              controllers.Application.renderAddTemplate
+GET         /signout                      controllers.Application.signout
+GET         /admin/listar/:ind            controllers.Application.renderTable(ind: Integer)
+GET         /admin/delete/:id             controllers.Application.deleteTemplate(id: String)
+
+
+POST        /signup                       controllers.Application.registerUsuarioNovo
+POST        /auth                         controllers.Application.authenticate
+POST        /admin/addTema                controllers.Application.addTema
 
 # Map static resources from the /public folder to the /assets URL path
-GET         /assets/*file                        controllers.Assets.at(path="/public/assets/", file)
+GET         /assets/*file                 controllers.Assets.at(path="/public/assets/", file)
+GET         /template/assets/*file        controllers.Assets.at(path="/public/assets/", file)
 
     

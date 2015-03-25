@@ -1,4 +1,4 @@
-@(title: String)
+@(title: String, template: Template)
 <!DOCTYPE HTML>
 <!--
 
@@ -37,7 +37,7 @@
 					<!-- Nav -->
 					<nav id="nav">
 						<ul>
-							<li class="current"><a href="#">Início</a></li>
+							<li class="current"><a href="/">Início</a></li>
 							<li>
 								<a href="">Categorias</a>
 								<ul>
@@ -48,7 +48,7 @@
 									<li><a href="#">Bootstrap</a></li>
 								</ul>
 							</li>
-							<li><a href="no-sidebar.html">Login</a></li>
+							<li><a href="/login">Login</a></li>
 						</ul>
 					</nav>
 
@@ -63,17 +63,17 @@
 							<div id="sidebar">
 								<!-- Sidebar -->
                                 <section>
-                                    <a href="#" class="image featured"><img src="/assets/html5up-verti/images/pic02.jpg" alt="" /></a>
+                                    <a href="#" class="image featured"><img src="@template.getUrl_picture" alt="" /></a>
                                     <div class="inner">
                                         <header>
-                                            <h2>An interesting title</h2>
+                                            <center><h2>@template.getTitulo</h2></center>
                                         </header>
                                     </div>
                                 </section>
                                 <section>
-                                    <center><a href="#" class="button icon fa-download" style="background-color: #88be14;">Preview</a></center>
+                                    <center><a href="@template.getUrl_preview" target="_blank" class="button icon fa-download" style="background-color: #88be14;">Preview</a></center>
                                         <br/>
-                                    <center><a href="#" class="button icon fa-download">Download</a></center>
+                                    <center><a href="@template.getUrl_download" target="_blank" class="button icon fa-download">Download</a></center>
                                 </section>
 							</div>
 						</div>
@@ -83,12 +83,9 @@
 								<!-- Content -->
 									<article>
 
-										<h2>Left Sidebar</h2>
+										<h2>@template.getIdTemplate # - @template.getTitulo</h2>
 
-										<p>Phasellus quam turpis, feugiat sit amet ornare in, hendrerit in lectus. 
-										Praesent semper mod quis eget mi. Etiam eu ante risus. Aliquam erat volutpat. 
-										Aliquam luctus et mattis lectus sit amet pulvinar. Nam turpis nisi 
-										consequat etiam lorem ipsum dolor sit amet nullam.</p>
+										<p>@template.getText</p>
 										
 
 									</article>
@@ -170,8 +167,10 @@
 						<div class="12u">
 							<div id="copyright">
 								<ul class="menu">
-									<li>&copy; Untitled. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-								</ul>
+                                    <li>&copy; All rights reserved</li><li>
+                                Design: <a href="http://codificandotudo.blogspot.com" target="_blank">
+                                Codificando Tudo</a></li>
+                                </ul>
 							</div>
 						</div>
 					</div>

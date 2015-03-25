@@ -27,7 +27,7 @@ public class Global extends GlobalSettings {
                 List<Template> lis = dao.findAllByClassName(Template.class.getName());
                 if (lis.size() == 0) {
                     for(int i=0;i<24;i++){
-                        Sistema.addTemplate("Titulo"+i,"","","","","","",0);
+                        Sistema.addTemplate("Titulo"+i,"","","assets/html5up-verti/images/pic02.jpg","","","",0);
                     }
                     Logger.info("Inserindo dados no BD.");
                 }
