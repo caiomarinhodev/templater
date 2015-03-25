@@ -49,7 +49,7 @@
 
                     <!-- Logo -->
                 <div id="logo">
-                    <h1><a href="#">Templatir</a></h1>
+                    <h1>Templatir</h1>
                     <span>by CODIFICANDO TUDO</span>
                 </div>
 
@@ -64,11 +64,11 @@
                         <li>
                             <a href="">Categorias</a>
                             <ul>
-                                <li><a href="/">Wordpress</a></li>
-                                <li><a href="/">Blogger</a></li>
-                                <li><a href="/">HTML5</a></li>
-                                <li><a href="/">Responsive</a></li>
-                                <li><a href="/">Bootstrap</a></li>
+                                <li><a href="#">Wordpress</a></li>
+                                <li><a href="#">Blogger</a></li>
+                                <li><a href="#">HTML5</a></li>
+                                <li><a href="#">Responsive</a></li>
+                                <li><a href="#">Bootstrap</a></li>
                             </ul>
                         </li>
                         <li><a href="/login">Login</a></li>
@@ -86,9 +86,8 @@
                 </div>
             </div>
         </div>
-        @if(Sistema.getIndice > 0) {
+        @if(Sistema.getIndice >= 0) {
             @for(i <- 0 to Sistema.getIndice) {
-                    <!-- Features pegar a partir daqui toda a Feature row (filter para 3 itens por linha)-->
                 <div class="oculto" id="line-@i">
                     <div id="features-wrapper" >
                         <div class="container">
@@ -227,9 +226,9 @@
         <script>
         var k = 0 ;
         function btn ( ) {
-            k = k + 1 ;
             $ ( '#line-' + k ).slideToggle( "slow");
-            window.scrollBy(0,275);
+            k = k + 1 ;
+            window.scrollBy(0,180);
 
         }
             btn();

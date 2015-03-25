@@ -27,6 +27,12 @@ public class Application extends Controller {
     }
 
     @Transactional
+    public static Result renderCategory(String c) {
+        Usuario u = Sistema.getUsuarioPorEmail(session().get("email"));
+        return ok(index.render("", Sistema.getListaTemplatesPorCategoria(c), u));
+    }
+
+    @Transactional
     public static Result viewTemplate(String id) {
         Long idt = Long.parseLong(id);
         Template t = Sistema.getTemplate(idt);

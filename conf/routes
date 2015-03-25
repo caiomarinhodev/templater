@@ -4,6 +4,7 @@
 
 # Home page
 GET         /                             controllers.Application.index
+GET         /category/:c                  controllers.Application.renderCategory(c: String)
 GET         /template/:id                 controllers.Application.viewTemplate(id: String)
 GET         /login                        controllers.Application.renderLogin
 GET         /loginfb                      controllers.Application.logarComFacebook
