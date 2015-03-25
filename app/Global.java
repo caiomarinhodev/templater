@@ -1,6 +1,7 @@
 import controllers.Sistema;
 import models.GenericDAO;
 import models.Template;
+import models.Usuario;
 import play.Application;
 import play.GlobalSettings;
 import play.Logger;
@@ -24,11 +25,11 @@ public class Global extends GlobalSettings {
 
             public void invoke() throws Throwable {
 
-                List<Template> lis = dao.findAllByClassName(Template.class.getName());
+                List<Usuario> lis = dao.findAllByClassName(Usuario.class.getName());
                 if (lis.size() == 0) {
-                    for(int i=0;i<24;i++){
-                        Sistema.addTemplate("Titulo"+i,"","","assets/html5up-verti/images/pic02.jpg","","","",0);
-                    }
+                    Usuario u = new Usuario("Administrador", "admin@admin.com", "admin", "https://en.opensuse.org/images/0/0b/Icon-user.png");
+                    dao.persist(u);
+                    dao.flush();
                     Logger.info("Inserindo dados no BD.");
                 }
             }
